@@ -34,6 +34,7 @@
                 <li><a href="index.php">Accueil</a></li>
                 <?php if(isset($_SESSION["login"]) && $_SESSION["type"] == "admin" ): ?>
                     <li><a href="index.php"> <i class="fa fa-dashboard"></i> <b>ADMIN</b></a></li>
+                    <li><a href="signup.php">Gestion Etudiants&Professeurs</a></li>
                 <?php elseif(isset($_SESSION["type"]) && $_SESSION["type"] == "etudiant" ): ?>
                     <li><a href="etudiant.php?id=<?=$_SESSION['id_etudiant'] ?>"> <i class="fa fa-dashboard"></i> Mes absences</a></li>
                 <?php elseif(isset($_SESSION["type"]) && $_SESSION["type"] == "professeur" ): ?>
@@ -43,7 +44,7 @@
                     <li><a href="disconnect.php"><i class="fa fa-sign-out"></i> Se déconnecter</a></li>
                 <?php endif ?>
                 <?php if(!isset($_SESSION["login"])): ?>
-                    <li><a href="signup.php">Inscription</a></li>
+                    
                     <li><a href="login.php">Connexion</a></li>
                 <?php endif ?>
             </ul>
